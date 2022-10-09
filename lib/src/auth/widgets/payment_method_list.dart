@@ -5,36 +5,33 @@ import 'package:food_ninja/resources/assets.dart';
 
 import '../../widgets/third_party_app_button.dart';
 
-class SocialList extends StatelessWidget {
-  const SocialList({super.key});
+class PaymentMethodList extends StatelessWidget {
+  const PaymentMethodList({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 20),
         ThirdPartyAppButton(
           onPressed: () {
-            log('Pressed Google');
+            log('Pressed Paypal');
           },
-          text: 'Google',
-          icon: MyAssets.imgGoogle,
+          icon: MyAssets.imgPaypal,
         ),
         const SizedBox(height: 12),
         ThirdPartyAppButton(
           onPressed: () {
-            log('Pressed Facebook');
+            log('Pressed Visa');
           },
-          text: 'Facebook',
-          icon: MyAssets.imgFacebook,
+          height: 50,
+          icon: MyAssets.imgVisa,
         ),
         const SizedBox(height: 12),
         ThirdPartyAppButton(
           onPressed: () {
-            log('Pressed Apple');
+            log('Pressed Payoneer');
           },
-          text: 'Apple',
-          icon: MyAssets.imgApple,
+          icon: MyAssets.imgPayoneer,
         ),
       ],
     );

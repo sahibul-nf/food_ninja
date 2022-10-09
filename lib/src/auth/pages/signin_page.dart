@@ -9,6 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../resources/assets.dart';
 import '../../../resources/colors.dart';
+import '../../routes.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -62,12 +63,12 @@ class SignInPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 60),
+                const SizedBox(height: 50),
                 Text(
                   'Login to Your Account',
                   style: MyFontStyles.title(),
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 30),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.85,
                   child: const MyTextField(
@@ -140,11 +141,35 @@ class SignInPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 30),
                 PrimaryButton(
                   onPressed: () {},
                   text: 'Login',
-                )
+                ),
+                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Don't have an account yet?  ",
+                      style: MyFontStyles.normal(
+                        color: Colors.grey.shade400,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.popAndPushNamed(context, RouteNames.signup);
+                      },
+                      child: Text(
+                        'Signup',
+                        style: MyFontStyles.normal(
+                          color: MyColors.primaryDark,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

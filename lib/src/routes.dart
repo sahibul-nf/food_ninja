@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_ninja/src/auth/pages/payment_method_page.dart';
 import 'package:food_ninja/src/auth/pages/signin_page.dart';
+import 'package:food_ninja/src/auth/pages/signup_process_page.dart';
+import 'package:food_ninja/src/auth/pages/upload_photo_page.dart';
 import 'package:food_ninja/src/onboarding/pages/splace_screen.dart';
 
 import 'auth/pages/signup_page.dart';
@@ -11,6 +14,9 @@ class RouteNames {
   static const String home = '/';
   static const String login = '/login';
   static const String signup = '/signup';
+  static const String signupProcess = '/signup-process';
+  static const String paymentMethod = '/payment-method';
+  static const String uploadPhoto = '/upload-photo';
   static const String forgotPassword = '/forgot-password';
   static const String resetPassword = '/reset-password';
   static const String profile = '/profile';
@@ -28,6 +34,9 @@ class Routes {
         RouteNames.splaceScreen: (context) => const SplaceScreen(),
         RouteNames.onboarding: (context) => OnboardingScreen(),
         RouteNames.signup: (context) => const SignUpPage(),
+        RouteNames.signupProcess: (context) => const SignUpProcessPage(),
+        RouteNames.paymentMethod: (context) => const PaymentMethodPage(),
+        RouteNames.uploadPhoto: (context) => const UploadPhotoPage(),
         RouteNames.login: (context) => const SignInPage(),
         // RouteNames.home: (context) => const HomeScreen(),
         // RouteNames.forgotPassword: (context) => const ForgotPasswordScreen(),

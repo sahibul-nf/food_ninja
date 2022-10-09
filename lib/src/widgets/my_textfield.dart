@@ -18,7 +18,7 @@ class MyTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: textEditingController,
-      cursorColor: MyColors.orange1,
+      cursorColor: MyColors.orangeBg,
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.white,
@@ -41,7 +41,7 @@ class MyTextField extends StatelessWidget {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
           borderSide: const BorderSide(
-            color: MyColors.orange1,
+            color: MyColors.orangeBg,
           ),
         ),
       ),

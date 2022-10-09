@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:food_ninja/resources/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SocialButton extends StatelessWidget {
-  const SocialButton(
+class ThirdPartyAppButton extends StatelessWidget {
+  const ThirdPartyAppButton(
       {super.key,
       required this.onPressed,
-      required this.text,
-      required this.icon});
+      this.text,
+      required this.icon,
+      this.height = 24});
   final void Function() onPressed;
-  final String text;
+  final String? text;
   final String icon;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +20,9 @@ class SocialButton extends StatelessWidget {
       height: 60,
       width: MediaQuery.of(context).size.width * 0.85,
       child: ElevatedButton.icon(
-        icon: Padding(
-          padding: const EdgeInsets.only(right: 5),
-          child: Image.asset(
-            icon,
-            height: 24,
-          ),
+        icon: Image.asset(
+          icon,
+          height: height,
         ),
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -36,14 +35,19 @@ class SocialButton extends StatelessWidget {
           ),
           backgroundColor: Colors.white,
         ),
-        label: Text(
-          text,
-          style: GoogleFonts.lato(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-            color: MyColors.black,
-          ),
-        ),
+        label: text != null
+            ? Padding(
+                padding: const EdgeInsets.only(left: 5),
+                child: Text(
+                  text!,
+                  style: GoogleFonts.lato(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: MyColors.black,
+                  ),
+                ),
+              )
+            : const SizedBox(),
       ),
     );
   }

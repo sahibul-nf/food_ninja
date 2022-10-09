@@ -61,19 +61,19 @@ class SignUpPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 60),
+                const SizedBox(height: 50),
                 Text(
                   'Sign Up for Free',
                   style: MyFontStyles.title(),
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 30),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.85,
                   child: const MyTextField(
                     hintText: 'Username',
                     prefixIcon: Icon(
                       IconlyBroken.profile,
-                      color: MyColors.orange1,
+                      color: MyColors.orangeBg,
                     ),
                   ),
                 ),
@@ -84,7 +84,7 @@ class SignUpPage extends StatelessWidget {
                     hintText: 'Email',
                     prefixIcon: Icon(
                       IconlyBroken.message,
-                      color: MyColors.orange1,
+                      color: MyColors.orangeBg,
                     ),
                   ),
                 ),
@@ -96,7 +96,7 @@ class SignUpPage extends StatelessWidget {
                     hintText: 'Password',
                     prefixIcon: const Icon(
                       IconlyBroken.password,
-                      color: MyColors.orange1,
+                      color: MyColors.orangeBg,
                     ),
                     suffixIcon: IconButton(
                       onPressed: () {},
@@ -153,22 +153,24 @@ class SignUpPage extends StatelessWidget {
                 // ),
                 const SizedBox(height: 60),
                 PrimaryButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, RouteNames.signupProcess);
+                  },
                   text: 'Create Account',
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       'Already have an account?  ',
                       style: MyFontStyles.normal(
-                        color: MyColors.primaryDark,
+                        color: Colors.grey.shade400,
                       ),
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, RouteNames.login);
+                        Navigator.popAndPushNamed(context, RouteNames.login);
                       },
                       child: Text(
                         'Login',
