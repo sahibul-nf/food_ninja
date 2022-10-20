@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_ninja/src/onboarding/providers/onboarding_bloc.dart';
 import 'package:food_ninja/src/routes.dart';
-import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

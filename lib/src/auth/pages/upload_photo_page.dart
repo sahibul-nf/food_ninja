@@ -1,7 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:food_ninja/resources/shapes.dart';
+import 'package:food_ninja/src/routes.dart';
 
 import '../../../resources/assets.dart';
 import '../../../resources/colors.dart';
@@ -60,7 +61,13 @@ class UploadPhotoPage extends StatelessWidget {
                           text: 'Take Photo',
                         ),
                       ],
-                    )
+                    ),
+                    // TODO: If already take photo, show widget below
+                    // const Center(
+                    //   child: _PhotoPreview(
+                    //     imageUrl: MyAssets.imgProfileNetwork,
+                    //   ),
+                    // )
                   ],
                 ),
               ),
@@ -69,7 +76,9 @@ class UploadPhotoPage extends StatelessWidget {
           Align(
             alignment: const Alignment(0, 0.8),
             child: PrimaryButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, RouteNames.setLocation);
+              },
               text: 'Next',
             ),
           )
@@ -109,6 +118,40 @@ class _TakePhotoOption extends StatelessWidget {
           const SizedBox(height: 10),
           Text(text),
         ],
+      ),
+    );
+  }
+}
+
+class _PhotoPreview extends StatelessWidget {
+  const _PhotoPreview({required this.imageUrl});
+  final String imageUrl;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: MyShapes.borderRadiusL,
+        color: MyColors.grey,
+      ),
+      child: CachedNetworkImage(
+        imageUrl: imageUrl,
+        width: 250,
+        height: 250,
+        fit: BoxFit.cover,
+        progressIndicatorBuilder: (context, url, downloadProgress) => Center(
+          widthFactor: 1,
+          heightFactor: 1,
+          child: SizedBox(
+            height: 45,
+            width: 45,
+            child: CircularProgressIndicator(
+              value: downloadProgress.progress,
+              backgroundColor: Colors.white,
+              color: MyColors.primaryDark,
+            ),
+          ),
+        ),
       ),
     );
   }

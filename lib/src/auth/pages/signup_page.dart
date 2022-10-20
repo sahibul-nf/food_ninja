@@ -107,50 +107,6 @@ class SignUpPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.symmetric(vertical: 20),
-                //   child: Text(
-                //     'Or Continue With',
-                //     style: MyFontStyles.normal(),
-                //   ),
-                // ),
-                // GestureDetector(
-                //   onTap: () {
-                //     MyBottomSheet.show(
-                //       context,
-                //       'Social Accounts',
-                //       const SocialList(),
-                //     );
-                //   },
-                //   child: Container(
-                //     height: 55,
-                //     width: MediaQuery.of(context).size.width * 0.85,
-                //     decoration: BoxDecoration(
-                //       color: Colors.grey.shade100,
-                //       borderRadius: BorderRadius.circular(15),
-                //       border: Border.all(
-                //         color: MyColors.grey,
-                //       ),
-                //     ),
-                //     child: Row(
-                //       mainAxisAlignment: MainAxisAlignment.center,
-                //       crossAxisAlignment: CrossAxisAlignment.center,
-                //       children: const [
-                //         Text(
-                //           'Social Accounts',
-                //           style: TextStyle(
-                //             fontSize: 14,
-                //             color: MyColors.black,
-                //             fontWeight: FontWeight.w600,
-                //           ),
-                //         ),
-                //         Icon(
-                //           Icons.keyboard_arrow_down_rounded,
-                //         )
-                //       ],
-                //     ),
-                //   ),
-                // ),
                 const SizedBox(height: 60),
                 PrimaryButton(
                   onPressed: () {

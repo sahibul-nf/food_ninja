@@ -13,4 +13,9 @@ class MyAssets {
   static const String imgPaypal = 'assets/images/Paypal.png';
   static const String imgPayoneer = 'assets/images/Payoneer.png';
   static const String imgVisa = 'assets/images/Visa.png';
+  static const String imgSuccessIllustration =
+      'assets/images/SuccessIllustration.png';
+
+  static const String imgProfileNetwork =
+      'https://gravatar.com/avatar/199b89971b00cf60f13ebf82f5a3d59f?s=400&d=robohash&r=x';
 }
